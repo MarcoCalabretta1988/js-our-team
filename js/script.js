@@ -54,15 +54,12 @@ const teamMembers = [
     },
 ];
 
+//* ----FUNZIONI------------------------------------
 
-
-//? Recupero elementi dal dom
-
-const teamCard = document.getElementById('team-card');
-
-let teamContent = '';
+const createCellToArray = (array) =>{
+    let teamContent = '';
 // * Preparo html da inserire nel Dom recuperando i valori dall'array
-for( let member of teamMembers){
+for( let member of array){
     teamContent += `
     <div class="col-4 d-flex flex-column my-4">
     <img src="img/${member.image}" alt="${member.name}">
@@ -71,5 +68,17 @@ for( let member of teamMembers){
   </div>
     `
 }
+ return teamContent;
 
-teamCard.innerHTML = teamContent;
+}
+
+//*-----------------------------------------------
+
+
+//? Recupero elementi dal dom
+
+const teamCard = document.getElementById('team-card');
+
+const teamMembersCard = createCellToArray(teamMembers);
+
+teamCard.innerHTML = teamMembersCard;
