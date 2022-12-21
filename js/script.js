@@ -58,4 +58,18 @@ const teams = [
 
 //? Recupero elementi dal dom
 
-const teamCard = document.getElementById('team card');
+const teamCard = document.getElementById('team-card');
+
+let teamContent = '';
+// * Preparo html da inserire nel Dom recuperando i valori dall'array
+for( let i = 0 ; i < teams.length ; i++){
+    teamContent += `
+    <div class="col-4 d-flex flex-column my-4">
+    <img src="img/${teams[i].image}" alt="${teams[i].name}">
+    <strong>${teams[i].name}</strong>
+    <i>${teams[i].role}</i>
+  </div>
+    `
+}
+
+teamCard.innerHTML = teamContent;
