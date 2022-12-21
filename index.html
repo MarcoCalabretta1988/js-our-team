@@ -20,10 +20,24 @@
     <div class="container text-center my-5">
         <h3>Our team</h3>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi beatae sapiente placeat nesciunt! Odit porro consequatur iure pariatur, voluptates qui. Aperiam tempore, reiciendis facere ab error laudantium temporibus similique odio!</p>
-        <div class="row" id="team-card">
-        
-
-        </div>
+        <div class="row" id="team-card"></div>
+        <form class="border border-success rounded p-5 my-5" id="add-member">
+            <h1 class="my-3">Inserisci un nuovo membro nel Team!</h1>
+            <div class="input-group mb-3">
+                <input type="file" class="form-control" id="member-img" disabled>
+                <label class="input-group-text" for="member-img">Carica immagine profilo</label>
+            </div>
+            <div class="mb-3">
+              <label for="member-name" class="form-label">Inserisci nome e cognome</label>
+              <input type="text" class="form-control" id="member-name" required>
+            </div>
+            <div class="mb-3">
+                <label for="member-role" class="form-label">Inserisci ruolo</label>
+                <input type="text" class="form-control" id="member-role" required>
+              </div>
+            
+            <button type="submit" class="btn btn-primary" id="add-button">Inserisci</button>
+          </form>
     
 </body>
 </html>

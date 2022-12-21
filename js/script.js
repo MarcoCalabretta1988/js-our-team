@@ -62,10 +62,10 @@ const createCellToArray = (array) =>{
 for( let member of array){
     teamContent += `
     <div class="col-4 d-flex flex-column my-4">
-    <img src="img/${member.image}" alt="${member.name}">
-    <strong>${member.name}</strong>
-    <i>${member.role}</i>
-  </div>
+      <img src="img/${member.image}" alt="${member.name}">
+      <strong>${member.name}</strong>
+      <i>${member.role}</i>
+    </div>
     `
 }
  return teamContent;
@@ -78,7 +78,32 @@ for( let member of array){
 //? Recupero elementi dal dom
 
 const teamCard = document.getElementById('team-card');
+const form = document.getElementById('add-member');
+const newMemberName = document.getElementById('member-name');
+const newMemberRole = document.getElementById('member-role');
 
 const teamMembersCard = createCellToArray(teamMembers);
 
 teamCard.innerHTML = teamMembersCard;
+
+//todo INSERISCO NUOVO MEMBRO DEL TEAM
+
+form.addEventListener('submit', (event) =>{
+ event.preventDefault();
+ const memberName = newMemberName.value.trim();
+ const memberRole = newMemberRole.value.trim();
+ if(!isNaN(memberName) || !isNaN(memberRole)){
+    alert('Inserisci valore corretto')
+}
+else{
+ const newMember = {
+        image : 'generic.jpg',
+        name : memberName,
+        role :  memberRole,
+ }
+ teamMembers.push(newMember);
+ const teamMembersCard = createCellToArray(teamMembers);
+
+teamCard.innerHTML = teamMembersCard;
+}
+});
