@@ -62,12 +62,12 @@ const teamCard = document.getElementById('team-card');
 
 let teamContent = '';
 // * Preparo html da inserire nel Dom recuperando i valori dall'array
-for( let i = 0 ; i < teamMembers.length ; i++){
+for( let member of teamMembers){
     teamContent += `
     <div class="col-4 d-flex flex-column my-4">
-    <img src="img/${teamMembers[i].image}" alt="${teamMembers[i].name}">
-    <strong>${teamMembers[i].name}</strong>
-    <i>${teamMembers[i].role}</i>
+    <img src="img/${member.image}" alt="${member.name}">
+    <strong>${member.name}</strong>
+    <i>${member.role}</i>
   </div>
     `
 }
