@@ -1,0 +1,12 @@
+/* GENERIC */
+
+img{
+    max-width: 100%;
+    display: inline-block;
+    border-radius: 20px;
+}
+
+strong {
+    margin: 10px;
+}
+/* UTILITIES */
