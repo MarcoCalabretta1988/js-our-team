@@ -56,7 +56,7 @@ const teamMembers = [
 
 //* ----FUNZIONI------------------------------------
 
-const createCellToArray = (array) =>{
+const getTeam = (array) =>{
     let teamContent = '';
 // * Preparo html da inserire nel Dom recuperando i valori dall'array
 for( let member of array){
@@ -82,7 +82,7 @@ const form = document.getElementById('add-member');
 const newMemberName = document.getElementById('member-name');
 const newMemberRole = document.getElementById('member-role');
 
-const teamMembersCard = createCellToArray(teamMembers);
+const teamMembersCard = getTeam(teamMembers);
 
 teamCard.innerHTML = teamMembersCard;
 
@@ -92,8 +92,9 @@ form.addEventListener('submit', (event) =>{
  event.preventDefault();
  const memberName = newMemberName.value.trim();
  const memberRole = newMemberRole.value.trim();
- if(!isNaN(memberName) || !isNaN(memberRole)){
-    alert('Inserisci valore corretto')
+ if(!isNaN(memberName) || !isNaN(memberRole) || !memberName || !memberRole){
+    alert('Inserisci valore corretto');
+    return;
 }
 else{
  const newMember = {
@@ -102,7 +103,7 @@ else{
         role :  memberRole,
  }
  teamMembers.push(newMember);
- const teamMembersCard = createCellToArray(teamMembers);
+ const teamMembersCard = getTeam(teamMembers);
 
 teamCard.innerHTML = teamMembersCard;
 }
